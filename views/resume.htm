@@ -1,0 +1,61 @@
+<div ng-controller="resumeController">
+
+    <!-- Navigation -->
+    <navbar-directive></navbar-directive>
+
+    <div class="container resume">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="row heading">
+                <div class="col-sm-6 col-sm-offset-3 content">
+                    <h3>Software Engineer</h3>
+                    <span>Results-oriented Software Engineer with expertise in analysis, design, development, testing, and implementation of internet-based applications. Proficient in a variety of platforms, languages, and embedded systems. Skilled at team collaboration with superb leadership and team building capabilities. A hands-on contributor crafting applications, internal and external websites and systems to support business needs and expand superior customer service offerings. An outstanding ability to grasp emerging technologies and interact smoothly and effectively with both peers and senior management alike.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1 left-column">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Education</h3>
+                            <h4>Lyon College // Batesville, AR</h4>
+                            <span>Bachelor of Science <br>Major: Chemistry, Minor: Mathematics</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Expertise</h3>
+                            <div ng-repeat="group in expertiseList">
+                                <h4>{{ group.name }}</h4>
+                                <ul class="resume-list">
+                                    <div ng-repeat="tech in group.tech">
+                                        <li ng-class='{"first-item":$first}'>{{ tech.name }}</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Certifications</h3>
+                            <h4>Oracle Certified Professional <br>Java SE 6 Programmer</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <h3>Employment History</h3>
+                    <div class="work-column" ng-repeat="job in workList">
+                        <h4>{{ job.company }} // {{ job.location }}</h4>
+                        <h4 class="position">{{ job.position }}</h4>
+                        <h5>{{ job.time }}</h5>
+                        <ul>
+                            <div ng-repeat="accomplishment in job.accomplishments">
+                                <li>{{ accomplishment.text }}</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

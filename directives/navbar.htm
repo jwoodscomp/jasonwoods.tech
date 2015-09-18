@@ -1,0 +1,32 @@
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#!/" ng-click="navCollapsed=true">
+                        <i class="fa fa-code"></i>  <span class="light">Woods</span> Development
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse" ng-class="{'in':!navCollapsed}" ng-click="navCollapsed=true">
+                    <ul class="nav navbar-nav">
+                        <li class="{{ currentLocation == '/about' ? 'active' : '' }}">
+                            <a class="page-scroll" href="#!/about">About Me</a>
+                        </li>
+                        <li class="{{ currentLocation == '/resume' ? 'active' : '' }}">
+                            <a class="page-scroll" href="#!/resume">Resume</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="https://github.com/jwoodscomp">GitHub</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="https://www.linkedin.com/in/jwtech">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
